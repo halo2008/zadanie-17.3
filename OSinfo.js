@@ -21,27 +21,4 @@ function getOSinfo() {
 	console.log('Home dir:', userInfo.homedir);
 }
 
-function checkTimeHour(){
-	var upTime = os.uptime();
-	upTime = Number(upTime);
-	var h = Math.floor(upTime/3600);
-	var m = Math.floor(upTime%3600/60);
-	var s = Math.floor(upTime%3600%60);
-    console.log('czas to ', h , ' godzin ', m, ' minut ', s, 'sekund');
-
-}
-
-function checkTimeMinuts(){
-	var upTime = os.uptime();
-	upTime = Number(upTime);
-	var m = Math.floor(upTime/60);
-	var s = Math.floor(upTime%60%60);
-    console.log('czas to ', m, ' minut ', s, 'sekund');
-
-}
-
-module.exports = {
-	print: getOSinfo,
-	checkTimeHour: checkTimeHour,
-	checkTimeMinuts: checkTimeMinuts
-};
+exports.print = getOSinfo;
